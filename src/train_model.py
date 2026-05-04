@@ -20,13 +20,9 @@ def train():
 
     model.fit(X)
 
-    df_full["score"] = model.decision_function(X)
-    df_full["prediction"] = model.predict(X)
-
     joblib.dump((model, fe), MODEL_PATH)
 
-    print("Model trained successfully")
-    print(df_full["prediction"].value_counts())
+    print("Model saved correctly")
 
 if __name__ == "__main__":
     train()

@@ -12,12 +12,7 @@ def predict_single(data: dict):
     score = model.decision_function(X)[0]
     pred = model.predict(X)[0]
 
-    if score < -0.05:
-        risk = "HIGH"
-    elif score < 0:
-        risk = "MEDIUM"
-    else:
-        risk = "LOW"
+    risk = "HIGH" if score < -0.05 else "MEDIUM" if score < 0 else "LOW"
 
     return {
         "prediction": "anomaly" if pred == -1 else "normal",
