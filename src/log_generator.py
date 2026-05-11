@@ -37,7 +37,7 @@ if __name__ == "__main__":
 
     df = generate_logs(1000)
 
-    # safety check
+    
     if df.empty:
         raise ValueError("Dataset generation failed")
 
